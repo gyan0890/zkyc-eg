@@ -52,51 +52,6 @@ function DesktopMenuLinks() {
       color="gray.50"
       fontSize="15px"
     >
-      <MenuLink text={'Tools'} link={Links.tools} />
-      <MenuLink text={'Boilerplate'} link={Links.boilerplate} />
-      <MenuLink text={'Learn'} newTab link={Links.blog} />
-      <MenuLink text={'Zk Chains'} link={Links.zkChains} />
-      <Menu>
-        {({ isOpen }) => (
-          <>
-            <MenuButton
-              isActive={isOpen}
-              as={Text}
-              color="black"
-              rightIcon={<ChevronDownIcon />}
-              cursor="pointer"
-            >
-              {'Playgrounds'}
-            </MenuButton>
-            <MenuList color="black">
-              <MenuItem>
-                <MenuLink text={'EIP-712'} link={Links.eip712} />
-              </MenuItem>
-              <MenuItem>
-                <MenuLink text={'ERC-191'} link={Links.erc191} />
-              </MenuItem>
-              <MenuItem>
-                <MenuLink text={'Tx Decoder'} link={Links.txDecoder} />
-              </MenuItem>
-            </MenuList>
-          </>
-        )}
-      </Menu>
-      <MenuLink text={'Contribute'} link={Links.contribute} />
-      <Link
-        ml="10px"
-        bgGradient="linear(to-l, gray.700, gray.500)"
-        p="7px 10px"
-        rounded="4px"
-        _hover={{
-          textDecoration: 'none',
-          bgGradient: 'linear(to-l, gray.800, gray.800)',
-        }}
-        fontWeight={500}
-        href={Links.subscribe}
-      >
-        Subscribe
-      </Link>
     </Stack>
   );
 }
