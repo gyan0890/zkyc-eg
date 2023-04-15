@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Form Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(to bottom, navy, purple) no-repeat fixed;
+        background-size: cover;
+      }
+      #main {
+        width: 400px;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      h1 {
+        font-size: 40px;
+        text-align: center;
+      }
+      form {
+        text-align: center;
+      }
+      button {
+        padding: 5px;
+        border-radius: 5px;
+        background-color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1>ValiDATE</h1>
+      <form>
+        <button id="connect-wallet">Connect Wallet</button>
+      </form>
+    </div>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" integrity="sha384-3Jl5Y5eCif5+yKj+wnCkk9cL29ARILZFXzgZ+LD1Gm8R+q3j+2QRMoOhv9oJzul0" crossorigin="anonymous"></script>
+    <script>
+      document.getElementById('connect-wallet').addEventListener('click', async () => {
+        if (typeof window.ethereum !== 'undefined') {
+          const provider = new ethers.providers.Web3Provider(window.ethereum);
+          await window.ethereum.enable();
+          console.log('Wallet connected:', provider);
+        } else {
+          console.log('Please install MetaMask to connect your wallet.');
+        }
+      });
+    </script>
+  </body>
+</html>

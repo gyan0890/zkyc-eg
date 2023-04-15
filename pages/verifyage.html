@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ValiDATE Form</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, navy, purple) no-repeat fixed;
+        background-size: cover;
+        font-family: "Roboto", sans-serif;
+      }
+      #main {
+        width: 400px;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+      }
+      h1 {
+        font-size: 40px;
+        text-align: center;
+        color: white;
+        margin-top: 0;
+        padding-top: 30px;
+      }
+      h2 {
+        font-size: 20px;
+        color: navy;
+      }
+      #file-upload {
+        margin-top: 20px;
+      }
+      #file-name {
+        margin-top: 10px;
+      }
+      #submit-btn {
+        display: none;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <h1>ValiDATE</h1>
+      <h2>Verify that you are above 18 years old</h2>
+      <form id="file-form">
+        <input type="file" id="file-upload" name="file" onchange="showFileName()">
+        <div id="file-name"></div>
+        <button type="submit" id="submit-btn">Upload</button>
+      </form>
+    </div>
+    
+    <script>
+      function showFileName() {
+        var input = document.getElementById("file-upload");
+        var output = document.getElementById("file-name");
+        output.innerHTML = "File name: " + input.files[0].name;
+        var submitBtn = document.getElementById("submit-btn");
+        submitBtn.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
